@@ -27,10 +27,10 @@ Before diving in, ensure you have the following ready:
 ## 🛠 Setting Up the Webhook
 
 Set the webhook for your bot using the following URL, replacing `<YOUR_BOT_TOKEN>` and `<YOUR_WEBHOOK_URL>` with your information:  
-https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=<YOUR_WEBHOOK_URL>
+'https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=<YOUR_WEBHOOK_URL>'
 
 Verify the webhook is set correctly:  
-https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getWebhookInfo
+'https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getWebhookInfo'
 
 ## 📖 Bot Features and Usage
 
