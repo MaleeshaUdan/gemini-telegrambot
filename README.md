@@ -1,72 +1,63 @@
-# Telegram Bot and Webhook Setup Guide
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Bot README</title>
+</head>
+<body>
+    <h1>🤖 Telegram Bot with Gemini API Integration</h1>
+    <p>This repository contains a PHP script for creating a Telegram bot that leverages the Gemini API for enhanced functionalities. It's designed to handle user interactions in real-time, manage sessions, and provide custom responses based on user input. Get ready to launch your bot with interactive commands, session management, and seamless integration with Gemini API services!</p>
 
-This repository contains the PHP script necessary to create a Telegram bot and set up a webhook for real-time message processing. Telegram bots are automated Telegram accounts you can chat with or use from within other chat conversations. Webhooks, on the other hand, allow your bot to receive incoming messages in real-time.
+    <h2>📋 Prerequisites</h2>
+    <p>Before diving in, ensure you have the following ready:</p>
+    <ul>
+        <li>A Telegram account.</li>
+        <li>PHP environment with Composer installed.</li>
+        <li>A server with SSL (HTTPS) support for the webhook setup.</li>
+        <li>Access to the Gemini API via MarketSuite on Google Cloud Platform.</li>
+    </ul>
 
-## Prerequisites
+    <h2>🔑 Configuration</h2>
+    <ol>
+        <li><strong>Telegram Bot Token</strong>: Obtain your bot token by creating a bot through Telegram's BotFather. Replace <code>"BOT_TOKEN"</code> in the script with your actual bot token.</li>
+        <li><strong>Gemini API Key</strong>: Replace <code>'GOOGLE_API_FOR_GEMINI'</code> with your actual Gemini API key obtained from the MarketSuite on Google Cloud Platform.</li>
+    </ol>
 
-Before starting, make sure you have:
-- A Telegram account
-- Basic knowledge of PHP
-- A server with SSL (HTTPS) to host your bot (required for webhook setup)
+    <h2>🚀 Getting Started</h2>
+    <ol>
+        <li><strong>Clone the Repository</strong>: Clone or download this repository to your server.</li>
+        <li><strong>Install Dependencies</strong>: Run <code>composer install</code> to install the required PHP dependencies.</li>
+        <li><strong>Configure Your Bot</strong>: Follow the configuration steps to set up your bot token and Gemini API key.</li>
+        <li><strong>Deploy</strong>: Upload the PHP script to your server. Ensure it's accessible via HTTPS.</li>
+        <li><strong>Set Up the Webhook</strong>: Configure the webhook to point to your script's URL using the Telegram API.</li>
+    </ol>
 
-<hr>
-
-## Creating a Telegram Bot
-
-1. **Start a Chat with BotFather**: BotFather is the official Telegram bot that allows you to create new bots. Search for @BotFather in your Telegram app and start a chat with it.
-2. **Create a New Bot**: Type `/newbot` and follow the instructions. BotFather will ask you for a name and username for your bot. After completion, you will receive a token to access the HTTP API.
-3. **Note Your Bot's Token**: Keep the token secure as it allows you to control your bot.
-
-<hr>
-
-## Setting Up the Webhook
-
-1. **Upload Your PHP Script**: Upload the `bot.php` file from this repository to your server. Make sure your server supports HTTPS.
-2. **Set the Webhook URL**: Use the Telegram API to set the webhook URL to your `bot.php` script. Replace `<YOUR_BOT_TOKEN>` with your bot's token and `<YOUR_WEBHOOK_URL>` with the URL to your script.
-
-    ```html
+    <h2>🛠 Setting Up the Webhook</h2>
+    <p>Set the webhook for your bot using the following URL, replacing <code>&lt;YOUR_BOT_TOKEN&gt;</code> and <code>&lt;YOUR_WEBHOOK_URL&gt;</code> with your information:</p>
     <a href="https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=<YOUR_WEBHOOK_URL>">Set Webhook</a>
-    ```
-
-3. **Verify the Webhook**: To check if the webhook is set up correctly, use the `getWebhookInfo` method:
-
-    ```html
+    <p>Verify the webhook is set correctly:</p>
     <a href="https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getWebhookInfo">Get Webhook Info</a>
-    ```
 
-<hr>
+    <h2>📖 Bot Features and Usage</h2>
+    <ul>
+        <li><strong>Interactive Commands</strong>: Your bot supports various commands like <code>/start</code>, <code>/bard</code>, <code>/end</code>, and <code>/dev</code> to engage users.</li>
+        <li><strong>Session Management</strong>: Utilizes sessions to maintain context and continuity in conversations.</li>
+        <li><strong>Gemini API Integration</strong>: Enhances bot responses using the Gemini API for dynamic content generation.</li>
+        <li><strong>Custom Responses</strong>: Includes error handling and default prompts for a user-friendly experience.</li>
+    </ul>
 
-## Testing Your Bot
+    <h2>🤝 Contributing</h2>
+    <p>Feel free to fork this repository, make changes, and submit pull requests. Contributions to enhance the bot's functionalities or documentation are always welcome!</p>
 
-Once the webhook is set up, any messages sent to your bot will be forwarded to your script, which can then process the messages accordingly. Test your bot by sending it a message through Telegram and verify that your server receives the incoming requests.
+    <h2>📄 License</h2>
+    <p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for details.</p>
 
-<hr>
-
-## Additional Resources
-
-- [Telegram Bot API Official Documentation](https://core.telegram.org/bots/api)
-- [Webhook Setup Guide](https://core.telegram.org/bots/webhooks)
-
-
-## Functionality and Code Structure
-
-The bot is developed in PHP and relies on Composer for managing dependencies, including the use of a `GeminiAPI` client for handling specific functionalities. Ensure you have Composer installed and run `composer install` in your project directory to fetch the necessary packages.
-
-### Key Features:
-
-- **GeminiAPI Integration**: Leverages the GeminiAPI for processing and responding to prompts. Users must configure their own API keys or settings as required by the API's usage terms.
-- **Session Management**: Utilizes a session folder (`session/`) to maintain state or context between messages, allowing for conversational continuity and stateful interactions.
-- **Interactive Commands**: Supports commands such as `/start`, `/bard`, `/end`, and `/dev`, enabling users to interact with the bot in a structured manner. The `/dev` command provides the developer's contact information, showcasing how to include personal or contact details securely.
-- **Inline Keyboard and Callback Queries**: Implements an inline keyboard and handles callback queries, enhancing user interaction with structured responses and options.
-- **Error Handling**: Includes basic error handling for unsupported file types and guides users with a default prompt to start or resume interaction.
-
-### Setup and Configuration:
-
-Ensure you replace `"BOT_TOKEN"` with your actual bot token provided by BotFather. If you're using GeminiAPI or any other external services, configure the respective API keys or credentials as required by the script.
-
-For session management, confirm the session folder exists on your server and is writable by the script to properly handle stateful interactions.
-
-### Running the Bot:
-
-Upload the script to your server and set up the webhook as described in the "Setting Up the Webhook" section. Test the bot's functionalities by sending supported commands and verifying the bot's responses and interactions.
-
+    <h2>📬 Contact</h2>
+    <p>For questions or suggestions, please reach out to me at:</p>
+    <ul>
+        <li>📧 Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
+        <li>💼 GitHub: <a href="https://github.com/YourGitHub">@YourGitHub</a></li>
+    </ul>
+</body>
+</html>
