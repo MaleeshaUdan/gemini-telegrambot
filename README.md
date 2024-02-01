@@ -51,5 +51,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or suggestions, please reach out to me at:
 
-- 📧 Email: [your-email@example.com](mailto:your-email@example.com)
-- 💼 GitHub: [@YourGitHub](https://github.com/YourGitHub)
+- 📧 Email: [your-maleeshaudan6@gmail.com](mailto:maleeshaudan6@gmail.com)
+- 💼 GitHub: [@MaleeshaUdan](https://github.com/MaleeshaUdan)
